@@ -8,7 +8,7 @@
 int main(void)
 {
 int n;
-extern time_t time(time_t *__timer) __THROW;
+srand(time(0));
 n = rand() - RAND_MAX / 2;
 if (n > 0)
 {

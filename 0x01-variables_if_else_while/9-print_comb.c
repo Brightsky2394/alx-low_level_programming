@@ -7,7 +7,8 @@ int main(void)
 {
 int n;
 for (n = 48; n < 58; n++)
-if (n != 37)
+putchar(n);
+if (n != 57)
 {
 putchar(',');
 putchar(' ');

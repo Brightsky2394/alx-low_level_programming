@@ -4,11 +4,21 @@
  */
 void print_alphabet(void)
 {
-char la;
-for (la = 'a'; la <= 'z'; la++)
+char la = 'a';
+while (la <= 'z')
 {
 _putchar(la);
-_putchar('\n');
+la++;
 }
 }
 
+/**
+ * main - Entry
+ * Return: Always 0
+ */
+int main(void)
+{
+print_alphabet();
+_putchar('\n');
+return (0);
+}

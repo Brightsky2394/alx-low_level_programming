@@ -11,7 +11,6 @@ _putchar(la);
 la++;
 }
 }
-
 /**
  * main - Entry
  * Return: Always 0

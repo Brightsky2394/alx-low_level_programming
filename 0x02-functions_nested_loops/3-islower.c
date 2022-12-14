@@ -11,16 +11,3 @@ if (c >= 'a' && c <= 'z')
 else
 	return (0);
 }
-
-/**
- * main - Entry point
- * Return: Always 0
- */
-
-int main(void)
-{
-int check;
-check = _islower('i');
-_putchar(check + '0');
-return (0);
-}

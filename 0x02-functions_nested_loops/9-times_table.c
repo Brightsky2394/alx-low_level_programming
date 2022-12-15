@@ -10,7 +10,7 @@ int prod;
 for (num = 0; num <= 9; num++)
 {
 _putchar('0');
-for (mult = 0; mult <= 9; mult++)
+for (mult = 1; mult <= 9; mult++)
 {
 _putchar(',');
 _putchar(' ');

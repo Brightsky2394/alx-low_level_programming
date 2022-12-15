@@ -25,3 +25,12 @@ _putchar((prod % 10) + '0');
 _putchar('\n');
 }
 }
+/**
+ * main - Entry
+ * Return: Always 0
+ */
+int main(void)
+{
+times_table();
+return (0);
+}

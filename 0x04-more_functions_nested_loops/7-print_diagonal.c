@@ -19,3 +19,12 @@ _putchar('\n');
 }
 putchar('\n');
 }
+/**
+ * main - Entry
+ * Return: Always 0
+ */
+int main(void)
+{
+print_diagonal();
+return (0);
+}

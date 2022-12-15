@@ -5,26 +5,24 @@
  */
 void print_diagonal(int n)
 {
-int len;
-int space;
-if (n > 0)
+int a;
+int b;
+a = 0;
+while (n > 0)
 {
-for (len = 0; len < n; len++)
-	_putchar(' ');
+b = a;
+while (b > 0)
+{
+_putchar(' ');
+i--;
+}
 _putchar('\\');
-if (len == n - 1)
-continue;
+_putchar('\n');
+c++;
+n--;
+}
+if (a < 1)
 _putchar('\n');
 }
-}
-putchar('\n');
-}
-/**
- * main - Entry
- * Return: Always 0
- */
-int main(void)
-{
-print_diagonal();
-return (0);
-}
+
+

@@ -17,7 +17,7 @@ else if (i % 3 == 0)
 else if (i % 5 == 0)
 	printf("Buzz");
 else
-	printf("%i", i);
+	printf("%d", i);
 if (i < 100)
 	printf(" ");
 }

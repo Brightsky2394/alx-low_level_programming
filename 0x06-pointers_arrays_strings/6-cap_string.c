@@ -1,36 +1,26 @@
 #include "main.h"
 /**
  * cap_string - capitalizes all words of a string
- * @s: string
+ * @z: string
  * Return: string
  */
-char *cap_string(char *s)
+char *cap_string(char *z)
 {
-int i;
-i = 0;
-while (s[i] != '\0')
+int i = 0;
+int j;
+char bd[] = " \n\t,;.!?\"(){}";
+if (z[0] >= 'a' && z[0] <= 'z')
+	z[0] -= 32;
+for (; z[i] != '\0'; i++)
 {
-if (((s[i - 1] == ' ' || s[i - 1] == '\n'
-|| s[i - 1] == '\t' || s[i - 1] == ','
-|| s[i - 1] == ';' || s[i - 1] == '!'
-|| s[i - 1] == '?' || s[i - 1] == '"'
-|| s[i - 1] == '(' || s[i - 1] == ')'
-|| s[i - 1] == '{' || s[i - 1] == '}'
-|| s[i - 1] == '.')
-&& (s[i] >= 'a' && s[i] <= 'z'))
+for (j = 0; j < 14; j++)
 {
-s[i] -= 32;
-}
-else if ((s[0] >= 97 && s[0] <= 122))
+if (z[i] == bd[j])
 {
-s[0] -= 32;
+if (z[i + 1] >= 'a' && z[i + 1] <= 'z')
+	z[i + 1] -= 32;
 }
-else
-{
-s[i] = s[i];
 }
-i++;
 }
-return (s);
+return (z);
 }
-

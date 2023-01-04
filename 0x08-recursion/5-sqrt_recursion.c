@@ -11,17 +11,18 @@ return (_sqrt(n, 1));
 
 /**
  *  _sqrt - _sqrt_recursion
- *  @n: integer paramter
+ *  @n: integer parameter
  *  @m: integer parameter
  *  Return: sqrt
  */
 int _sqrt(int n, int m)
 {
-if (n < 0)
-	return (-1);
-if ((m * m) > n)
-	return (-1);
-if (m * m == n)
+int square;
+square = m * m;
+if (square == n)
 	return (m);
-return (_sqrt(n, m + 1));
+else if (square < n)
+	return (_sqrt(n, m + 1));
+else
+	return (-1);
 }

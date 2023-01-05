@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * _sqrt_recursion - function that returns the natural square root of a number
- * @n: integer n
- * Return: integer
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: integer number
+ * Return: the natural square root
  */
 int _sqrt_recursion(int n)
 {
@@ -10,19 +10,19 @@ return (_sqrt(n, 1));
 }
 
 /**
- *  _sqrt - _sqrt_recursion
- *  @n: integer parameter
- *  @m: integer parameter
- *  Return: sqrt
+ * _sqrt - Calculates natural square root
+ * @m: number to determine if square root
+ * @i: iterate number
+ * Return: the natural square root
  */
-int _sqrt(int n, int m)
+
+int _sqrt(int m, int i)
 {
-int square;
-square = m * m;
-if (square == n)
-	return (m);
-else if (square < n)
-	return (_sqrt(n, m + 1));
-else
+int sqrt = i * i;
+if (sqrt > m)
 	return (-1);
+if (sqrt == m)
+	return (i);
+return (_sqrt(n, i + 1));
 }
+

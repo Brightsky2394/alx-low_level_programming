@@ -16,7 +16,7 @@ r = malloc(sizeof(char) * size);
 if (r == 0)
 	return (0);
 for (j = 0; j < size; j++)
-	s[i] = c;
-s[i] = '\0';
-return (s);
+	r[i] = c;
+r[i] = '\0';
+return (r);
 }

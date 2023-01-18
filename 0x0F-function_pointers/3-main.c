@@ -1,29 +1,33 @@
 #include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 /**
  * main - program that performs simple operations
  * @argv: Pointer of array of pointers containing strings entering main
  * @argc: Counts the number of parameters that go into main
  * Return: No element matches -1, if size <=0 -1
  */
-int main(int argc, char **argv)
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-int (*oprt)(int, int);
+int num1, num2;
 if (argc != 4)
 {
-int res;
-int (*func)(int, int);
-if (argc != 4)
-	printf("Error\n"), exit(98);
-if ((argv[2][0] != '+' && argv[2][0] != '-' && argv[2][0] != '*'
-			 && argv[2][0] != '/' && argv[2][0] != '%') || strlen(argv[2]) != 1)
-	printf("Error\n"), exit(99);
-if ((argv[2][0] == '/' || argv[2][0] == '%') && (atoi(argv[3]) == 0))
-	printf("Error\n"), exit(100);
-func = get_op_func(argv[2]);
-res = func(atoi(argv[1]), atoi(argv[3]));
-printf("%i\n", res);
+printf("Error\n");
+exit(98);
+}
+num1 = atoi(argv[1]);
+op = argv[2];
+num2 = atoi(argv[3]);
+if (get_op_func(op) == NULL || op[1] != '\0')
+{
+printf("Error\n");
+exit(99);
+}
+if ((*op == '/' && num2 == 0) || (*op == '%' && num2 == 0))
+{
+printf("Error\n");
+exit(100);
+}
+printf("%d\n", get_op_func(op)(num1, num2));
 return (0);
 }

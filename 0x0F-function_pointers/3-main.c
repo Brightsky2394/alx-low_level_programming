@@ -1,8 +1,6 @@
 #include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
 /**
  * main - program that performs simple operations
  * @argv: Pointer of array of pointers containing strings entering main

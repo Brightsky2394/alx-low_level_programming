@@ -2,93 +2,78 @@
 #include <stdarg.h>
 #include <stdio.h>
 /**
- * print_char - Prints a char
- * @arg: A list of arguments pointing to
- * the character to be printed
- * Return: Nothing
+ * tchar - prints variadic argument char
+ * @list: variadic list
+ * Return: No return
  */
-void print_char(va_list arg)
+void tchar(va_list list)
 {
-char letter;
-letter = va_arg(arg, int);
-printf("%c", letter);
+printf("%c", va_arg(list, int));
 }
-
 /**
- * print_int - Prints an int
- * @arg: A list of arguments pointing to
- * the integer to be printed
- * Return: Nothing
+ * tint - prints variadic argument int
+ * @list: variadic list
+ * Return: No return
  */
-void print_int(va_list arg)
+void tint(va_list list)
 {
-int num;
-num = va_arg(arg, int);
-printf("%d", num);
+printf("%i", va_arg(list, int));
 }
-
 /**
- * print_float - Prints a float
- * @arg: A list of arguments pointing to
- * the float to be printed
- * Return: Nothing
+ * tfloat - prints variadic argument float
+ * @list: variadic list
+ * Return: No return
  */
-void print_float(va_list arg)
+void tfloat(va_list list)
 {
-float num;
-num = va_arg(arg, double);
-printf("%f", num);
+printf("%f", va_arg(list, double));
 }
-
 /**
- * print_string - Prints a string
- * @arg: A list of arguments pointing to
- * the string to be printed
- * Return: Nothing
+ * tstring - prints variadic argument string
+ * @list: variadic list
+ * Return: No return
  */
-void print_string(va_list arg)
+void tstring(va_list list)
 {
-char *str;
-str = va_arg(arg, char *);
-if (str == NULL)
-{
-printf("(nil)");
-return;
+char *tmp;
+tmp = va_arg(list, char *);
+if (tmp == 0)
+	tmp = "(nil)";
+printf("%s", tmp);
 }
-printf("%s", str);
-}
-
 /**
- * print_all - Prints anything, followed by a new line
- * @format: A string of characters representing the argument types
- * @...: A variable number of arguments to be printed
- * REturn: Nothing
+ * print_all - prints anything
+ * @format: list of types of arguments passed to the function
+ * @...: Arguments Variadic
+ * Return: No return
  */
 void print_all(const char * const format, ...)
 {
-va_list args;
-int i = 0, j = 0;
-char *separator = "";
-printer_t funcs[] = {
-	{"c", print_char},
-	{"i", print_int},
-	{"f", print_float},
-	{"s", print_string}
+ftype fa[] = {
+	{"c", tchar},
+	{"i", tint},
+	{"f", tfloat},
+	{"s", tstring}
 };
-va_start(args, format);
-while (format && (*(format + i)))
+int l1 = 0, l2 = 0;
+va_list list;
+char *comma = "";
+va_start(list, format);
+while (format && format[l1])
 {
-j = 0;
-while (j < 4 && (*(format + i) != *(funcs[j].symbol)))
-	j++;
-if (j < 4)
+l2 = 0;
+while (l2 < 4)
 {
-printf("%s", separator);
-funcs[j].print(args);
-separator = ", ";
+if (format[l1] == fa[l2].tc[0])
+{
+printf("%s", comma);
+fa[l2].tf(list);
+comma = ", ";
 }
-i++;
+l2++;
+}
+l1++;
 }
 printf("\n");
-va_end(args);
+va_end(list);
 }

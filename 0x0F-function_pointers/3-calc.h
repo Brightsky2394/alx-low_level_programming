@@ -1,6 +1,5 @@
-#ifndef STRUCT_H
-#define STRUCT_H
-#include <stddef.h>
+#ifndef FUNCTION_H
+#define FUNCTION_H
 /**
  * struct op - Struct op
  * @op: The operator
@@ -11,11 +10,7 @@ typedef struct op
 char *op;
 int (*f)(int a, int b);
 } op_t;
-#endif
 
-
-#ifndef FUNCTION_H
-#define FUNCTION_H
 int op_add(int a, int b);
 int op_sub(int a, int b);
 int op_mul(int a, int b);

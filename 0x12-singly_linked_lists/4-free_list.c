@@ -1,4 +1,4 @@
-#include "links.h"
+#include "lists.h"
 /**
  * free_list - Frees a linked list
  * @head: The pointer to the first node of linked list
@@ -6,11 +6,13 @@
  */
 void free_list(list_t *head)
 {
-list_t *current;
-while ((current = head) != NULL)
+list_t *tmp;
+while (head != NULL)
 {
+tmp = head;
+free(head->str);
 head = head->next;
-free(current->str);
-free(current);
+free(tmp);
 }
 }
+

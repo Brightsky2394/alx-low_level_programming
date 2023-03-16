@@ -86,4 +86,3 @@ dlistint_t *create_node(unsigned int n, void *next, void *prev)
 	new_node->prev = prev;
 	return (new_node);
 }
-

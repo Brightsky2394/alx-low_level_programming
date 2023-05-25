@@ -2,5 +2,6 @@
 
 CC = gcc
 SR = main.c school.c
+
 all:
 	$(CC) $(SR) -o school

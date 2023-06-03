@@ -8,8 +8,7 @@ int main(void)
 {
 int i, n, m, c;
 c = 0;
-i = 0;
-while (i < 1024)
+for (i = 0; i < 1023; i++)
 {
 n = i % 5;
 m = i % 3;
@@ -18,7 +17,6 @@ if ((n == 0) || (m == 0))
 c = c + i;
 }
 }
-i++;
 printf("%i\n", c);
 return (0);
 }

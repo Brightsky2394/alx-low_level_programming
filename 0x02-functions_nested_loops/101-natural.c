@@ -8,7 +8,7 @@ int main(void)
 {
 int i, n, m, c;
 c = 0;
-for (i = 0; i < 1023; i++)
+for (i = 0; i <= 1023; i++)
 {
 n = i % 5;
 m = i % 3;

@@ -15,6 +15,7 @@ if (array == NULL || size == 0)
 	return (-1);
 
 step = sqrt(size);
+min = 0;
 for (index = 0; index < size && array[index] < value; )
 {
 printf("Value checked array[%lu] = [%d]\n", index, array[index]);

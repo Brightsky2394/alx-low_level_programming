@@ -24,7 +24,7 @@ min = pos;
 pos += step;
 }
 printf("Value found between indexes [%lu] and [%lu]\n", min, pos);
-res = size - 1
+res = size - 1;
 if (pos > res)
 pos = res;
 for (i = min; i <= pos && array[i] <= value; i++)

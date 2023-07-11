@@ -22,7 +22,7 @@ printf("Value checked array[%lu] = [%d]\n", index, array[index]);
 min = index;
 index += step;
 }
-printf("Value found between indexes [%lu] and [%lu]", min, index);
+printf("Value found between indexes [%lu] and [%lu]\n", min, index);
 res = size - 1;
 if (index < res)
 	index = res;

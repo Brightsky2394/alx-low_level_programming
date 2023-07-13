@@ -26,7 +26,7 @@ pos += step;
 printf("Value found between indexes [%lu] and [%lu]\n", min, pos);
 
 if (pos > (size - 1))
-pos = size - 1;
+	pos = size - 1;
 for (j = min; j <= pos && array[j] <= value; j++)
 {
 printf("Value checked array[%lu] = [%d]\n", j, array[j]);
